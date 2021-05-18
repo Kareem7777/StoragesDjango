@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <nav>
+        <div class="links">
+            <a class="a" href="{% url 'home-page' %}">Home Page</a>
+            <a class="a" href="{% url 'storage-data' %}">Storage Data </a>
+            <a class="a" href="{% url 'supplier-data' %}">Supplier Data </a>
+            <a class="a" href="{% url 'item-data' %}">Item Data </a>
+            <a class="a" href="{% url 'master-in-data' %}">In Data </a>
+            <a class="a" href="{% url 'master-out-data' %}">Out Data </a>
+        </div>
+        
+    </nav>
+    <center>
+      <table >
+        <caption><h2 class="itemsdata"><b class="itemsfont"> {{page_title}}</b></h2></caption>
+        <thead>
+          <tr>
+            <td>code</td>
+            <td>customer name</td>
+            <td>customer mobile</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for m in data %}
+          <tr>
+            <td>{{ m.customer_code }}</td>
+            <td>{{ m.customer_name }}</td>
+            <td>{{ m.customer_mobile }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>      
+    </center>
+{% endblock %}

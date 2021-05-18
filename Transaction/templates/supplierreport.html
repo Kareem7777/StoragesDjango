@@ -1,0 +1,28 @@
+{% extends 'base transaction.html' %}
+
+{% block content %}
+    <h1>our project</h1>
+    <center>
+      <table >
+        <thead>
+          <tr>
+            <td  colspan="7" class="itemsdata" ><b class="itemsfont"> supplier report</b></td>
+          </tr>
+          <tr>
+            <td>supplier name</td>
+            <td>total</td>
+          </tr>
+        </thead>
+        <tbody>
+          
+
+            <tr class="code">
+              <td text-align="center">{{ supplier_data.supplier_name }}</td>
+              <td>{{sumtot}}</td>
+            </tr>
+
+        </tbody>
+      </table>      
+    </center>
+
+{% endblock %}

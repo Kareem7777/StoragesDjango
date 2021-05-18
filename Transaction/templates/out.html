@@ -1,0 +1,44 @@
+{% extends 'base transaction.html' %}
+{% block content %}
+    <nav>
+        <div class="links">
+            <a class="a" href="{% url 'home-page' %}">Home Page</a>
+            <a class="a" href="{% url 'storage-data' %}">Storage Data </a>
+            <a class="a" href="{% url 'supplier-data' %}">Supplier Data </a>
+            <a class="a" href="{% url 'customer-data' %}">Customer Data </a>
+            <a class="a" href="{% url 'item-data' %}">Item Data </a>
+            <a class="a" href="{% url 'master-in-data' %}">In data </a>
+            
+        </div>
+        
+    </nav>
+    <center>
+      <table >
+        <caption><h2 class="itemsdata"><b class="itemsfont"> Master Out Data</b></h2></caption>
+        <thead>
+          <tr>
+            <td>code</td>
+            <td>date</td>
+            <td>move number</td>
+            <td>notes</td>
+            <td>storage</td>
+            <td>supplier</td>
+            <td>customer</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for m in data %}
+          <tr>
+            <td><a href="{% url 'detail-out' m.master_out_id %}">{{ m.master_out_code }}</a></td>
+            <td>{{ m.master_out_date }}</td>
+            <td>{{ m.master_out_movenumber }}</td>
+            <td>{{ m.master_out_notes }}</td>
+            <td>{{ m.Storage_id.storage_name }}</td>
+            <td>{{ m.Supplier_id.supplier_name }}</td>
+            <td>{{ m.Customer_id.customer_name }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>      
+    </center>
+{% endblock %}

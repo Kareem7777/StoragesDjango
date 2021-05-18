@@ -1,0 +1,41 @@
+<h1>Add Details</h1>
+<h1>{{mata.master_in_id}}</h1>
+  <!-- {% for t in data%}
+    <li>
+      {{t.Master_in_id.master_in_id}} {{t.detail_in_quantity}}
+    </li>
+    {%endfor%} -->
+    <form method="POST">
+        {%csrf_token%}
+        <div class="mb-3">
+          <input type="number" class="form-control" id="exampleInputEmail1" name="detail_in_code" placeholder="Code">
+        </div>
+      
+        <div class="mb-3">
+          <input type="number" class="form-control" id="exampleInputPassword1" name="detail_in_quantity"
+            placeholder="Quantity">
+        </div>
+      
+        <div class="mb-3">
+          <input type="number" class="form-control" id="exampleInputPassword1" name="detail_in_price" placeholder="Price">
+        </div>
+      
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01">Item Name</label>
+          <select class="form-select" id="inputGroupSelect01" name="Items_id">
+            <option selected>Choose...</option>
+            {% for s in iata %}
+            <option value="{{s.items_id}}">{{s.items_name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01" hidden>Master In Id</label>
+          <select class="form-select" id="inputGroupSelect01" name="Master_in_id" hidden>
+            <!-- <option selected>Choose...</option> -->
+            <option value={{mata.master_in_id}} selected></option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" formaction="{% url 'detail-in' mata.master_in_id %}">Submit</button>
+        <a class="btn btn-primary" href="{% url 'home-page' %}">Home</a>
+      </form>

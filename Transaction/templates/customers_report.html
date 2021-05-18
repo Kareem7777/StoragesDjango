@@ -1,0 +1,26 @@
+{% extends 'base transaction.html' %}
+
+{% block content %}
+    <center>
+      <table >
+        <thead>
+          <tr>
+            <td  colspan="7" class="itemsdata" ><b class="itemsfont"> {{page_title}}</b></td>
+          </tr>
+          <tr>
+            <td>Customer name</td>
+            <td>total</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for m ,i in my_list%}
+            <tr class="code">
+              <td text-align="center">{{ i.customer_name }}</td>
+              <td>{{m}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>    
+    </center>
+
+{% endblock %}

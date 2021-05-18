@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+	<h1> wolcom, {{user.username}} </h1>
+	
+	<h1> -------------------- </h1>
+	
+
+	
+		<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+	
+	
+	<a href="{% url 'home-page' %}">home</a>
+	<a href="{% url 'logout' %}">logout</a>
+	
+
+	
+	
+{% endblock %}

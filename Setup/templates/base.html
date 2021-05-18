@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{page_title}}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/setup.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <h1>our project</h1>
+    {% if user.is_authenticated %}
+	<a href="{% url 'logout' %}">logout</a>
+	{% endif %}
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

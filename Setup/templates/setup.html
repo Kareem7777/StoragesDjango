@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <nav>
+        <div class="links">
+            <a class="b" href="" >Data Section:</a>
+            <a class="b" href="{% url 'storage-data'%}" target="_blank" >Storage</a>
+            <a class="b" href="{% url 'supplier-data'%}" target="_blank" >Supplier</a>
+            <a class="b" href="{% url 'customer-data'%}" target="_blank" >Customer</a>
+            <a class="b" href="{% url 'item-data'%}" target="_blank" >Item</a>
+            <a class="b" href="{% url 'master-in-data'%}" target="_blank" >In</a>
+            <a class="b" href="{% url 'master-out-data'%}" target="_blank" >Out</a>
+            <a class="b" href="{% url 'suppliers-report'%}" target="_blank" >Suppliers Report</a>
+            <a class="b" href="{% url 'customers-report'%}" target="_blank" >Customers Report</a>
+            <a class="b" href="{% url 'items-report'%}" target="_blank" >Items Report</a>
+        </div>
+        
+    </nav>
+    <nav>
+        <div class="links">
+            <a class="a" href="" >Add Section: </a>
+            <a class="a" href="{% url 'add-item'%}" target="_blank" >Item </a>
+            <a class="a" href="{% url 'add-storage'%}" target="_blank" >Storage </a>
+            <a class="a" href="{% url 'add-supplier'%}" target="_blank" >Supplier </a>
+            <a class="a" href="{% url 'add-customer'%}" target="_blank" >Customer </a>
+            <a class="a" href="{% url 'add-master-in'%}" target="_blank" >Master-In </a>
+            <a class="a" href="{% url 'add-master-out'%}" target="_blank" >Master-Out </a>
+            <a class="a" href="{% url 'add-detail-in'%}" target="_blank" >Detail-In </a>
+            <a class="a" href="{% url 'add-detail-out'%}" target="_blank" >Detail-Out </a>
+        </div>
+    </nav>
+{% endblock %}

@@ -1,0 +1,101 @@
+body{
+    background-color: rgb(129, 132, 134);
+}
+h1 {
+    background-color: rgb(20, 14, 11);
+    padding: 1px 2px;
+    margin: 0px;
+    color: rgb(222, 227, 228);
+    text-align: center;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 60px;
+}
+nav {
+    display: inline block;
+    position: relative;
+    
+}
+.links {
+    margin: 5px;
+    background-color: rgb(9, 56, 48);
+    margin-top: 30px;
+    display: inline block;
+    
+}
+
+
+.a {
+    background-color: rgb(18, 100, 82);
+    color: rgb(3, 36, 29);
+    width: 400px;
+    padding: 5px 10px;
+    margin-right: 20px;
+    font-size: 30px;
+    border-radius: 4px;
+    display: inline block;
+    text-decoration: none;
+}
+
+
+.b {
+    background-color: rgb(18, 100, 82);
+    color: rgb(3, 36, 29);
+    width: 400px;
+    padding: 5px 10px;
+    margin-right: 0px;
+    font-size: 30px;
+    border-radius: 4px;
+    display: inline block;
+    text-decoration: none;
+}
+
+table{
+    width: 100%;
+}
+/* (182, 180, 177) */
+table td {
+    padding: 15px;
+    background-color: rgb(182, 180, 177);
+    border: 1px solid rgb(121, 119, 119);
+    text-transform: capitalize;
+    font-size: 15px;
+    text-align: center;
+    
+}
+/* background-color: rgb(52, 85, 100); */
+table thead td{
+    background-color: rgb(52, 85, 100);
+    text-transform: capitalize;
+    color: rgb(9, 32, 37);
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    
+}
+.itemsdata {
+    border-left:20px solid rgb(12, 15, 14)  ;
+    border-right:20px solid rgb(12, 15, 14)  ;
+    background-color: rgb(92, 85, 85);
+    border-radius: 4px;
+    color: rgb(245, 239, 239);
+    
+}
+.itemsfont {
+    padding: 5px 10px;
+    color: rgb(212, 220, 224);
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Original Surfer', cursive;
+    text-transform: capitalize;
+    
+}
+.code {
+    text-align: center;
+    font-size: 15px ;
+    text-transform: capitalize;
+}
+.linked {
+    text-align: center;
+}

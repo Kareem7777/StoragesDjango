@@ -1,0 +1,65 @@
+{% extends 'base transaction.html'%}
+{%block content%}
+{%csrf_token%}
+
+<center>
+  <table >
+    <thead>
+      <tr>
+        <td  colspan="7" class="itemsdata" ><b class="itemsfont"> master out Data</b></td>
+      </tr>
+      <tr>
+        <td>code</td>
+        <td>date</td>
+        <td>move number</td>
+        <td>notes</td>
+        <td>storage</td>
+        <td>supplier</td>
+        <td>customer</td>
+      </tr>
+    </thead>
+    <tbody>
+        
+        <tr class="code">
+          <td text-align="center">{{ data.master_out_code }}</td>
+          <td text-align="center">{{ data.master_out_date }}</td>
+          <td text-align="center">{{ data.master_out_movenumber }}</td>
+          <td text-align="center">{{ data.master_out_notes }}</td>
+          <td text-align="center">{{ data.Storage_id.storage_name}}</td>
+          <td text-align="center">{{ data.Supplier_id.supplier_name }}</td>
+          <td text-align="center">{{ data.Customer_id.customer_name }}</td>
+        </tr>
+    </tbody>
+  </table> 
+  <table >
+    <thead>
+      <tr>
+        <td  colspan="7" class="itemsdata" ><b class="itemsfont"> detail out Data</b></td>
+      </tr>
+      <tr>
+        <td>code</td>
+        <td>item name</td>
+        <td>price</td>
+        <td>quantity</td>
+        <td>master out id</td>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in zata %}
+        <tr>
+          <td>{{ i.detail_out_code }}</td>
+          <td>{{ i.Items_id.items_name }}</td>
+          <td>{{ i.detail_out_price }}</td>
+          <td>{{ i.detail_out_quantity }}</td>
+          <td>{{ i.Master_out_id.master_out_id }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>      
+</center>
+
+
+
+
+
+{% endblock %}

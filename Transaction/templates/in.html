@@ -1,0 +1,50 @@
+{% extends 'base transaction.html' %}
+{%csrf_token%}
+{% block content %}
+    <nav>
+        <div class="links">
+            <a class="a" href="{% url 'home-page' %}">Home Page</a>
+            <a class="a" href="{% url 'storage-data' %}">Storage Data </a>
+            <a class="a" href="{% url 'supplier-data' %}">Supplier Data </a>
+            <a class="a" href="{% url 'customer-data' %}">Customer Data </a>
+            <a class="a" href="{% url 'item-data' %}">Item Data </a>
+            <a class="a" href="{% url 'master-out-data' %}">Out Data </a>
+        </div>
+        
+    </nav>
+    <br/>
+    <br/>
+    <center>
+      <table >
+        <thead>
+          <tr>
+            <td  colspan="9999" class="itemsdata" ><b class="itemsfont"> master In Data</b></td>
+          </tr>
+          <tr>
+            <td>code</td>
+            <td>date</td>
+            <td>move number</td>
+            <td>notes</td>
+            <td>storage</td>
+            <td>supplier</td>
+            <td>customer</td>
+            <td>add details</td>
+          </tr>
+        </thead>
+        <tbody>
+            {% for m in data %}
+            <tr class="code">
+              <td text-align="center"><a href="{% url 'detail-in' m.master_in_id %}">{{ m.master_in_code }}</a></td>
+              <td text-align="center">{{ m.master_in_date }}</td>
+              <td text-align="center">{{ m.master_in_movenumber }}</td>
+              <td text-align="center">{{ m.master_in_notes }}</td>
+              <td text-align="center">{{ m.Storage_id.storage_name}}</td>
+              <td text-align="center">{{ m.Supplier_id.supplier_name }}</td>
+              <td text-align="center">{{ m.Customer_id.customer_name }}</td>
+              <td text-align="center"><a href="{% url 'tryde-in' m.master_in_id  %}"> <button>Add Details</button></a></td>
+            {% endfor %}
+            </tr>
+        </tbody>
+      </table>      
+    </center>
+{% endblock %}

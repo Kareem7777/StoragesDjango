@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<title>{{page_title}}</title>
+{% if submitted %}
+Added Detail-In Successfully
+<a class="btn btn-primary" href="{% url 'home-page' %}">Home</a>
+<a class="btn btn-primary" href="{% url 'add-detail-in' %}">Add Again</a>
+{%else%}
+<form method="POST">
+  {%csrf_token%}
+  <div class="mb-3">
+    <input type="number" class="form-control" id="exampleInputEmail1" name="detail_in_code" placeholder="Code">
+  </div>
+
+  <div class="mb-3">
+    <input type="number" class="form-control" id="exampleInputPassword1" name="detail_in_quantity"
+      placeholder="Quantity">
+  </div>
+
+  <div class="mb-3">
+    <input type="number" class="form-control" id="exampleInputPassword1" name="detail_in_price" placeholder="Price">
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Item Name</label>
+    <select class="form-select" id="inputGroupSelect01" name="Items_id">
+      <option selected>Choose...</option>
+      {% for s in item_data %}
+      <option value="{{s.items_id}}">{{s.items_name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Master In Id</label>
+    <select class="form-select" id="inputGroupSelect01" name="Master_in_id">
+      <option selected>Choose...</option>
+      {% for c in master_in_data %}
+      <option value="{{c.master_in_id}}">{{c.master_in_id}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <a class="btn btn-primary" href="{% url 'home-page' %}">Home</a>
+</form>
+{%endif%}

@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<title>{{page_title}}</title>
+{% if submitted %}
+  Added Customer successfully
+  <a class="btn btn-primary" href="{% url 'home-page' %}" target="self">Home</a>
+  <a class="btn btn-primary" href="{% url 'add-customer' %}">Add Again</a>
+{%else%}
+  <center>
+    <h1>Add Customer</h1>
+    <form method="POST" >
+      {%csrf_token%}
+      <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" name="customer_code" placeholder="Code">
+      </div>
+      <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputPassword1" name="customer_name" placeholder="Name"> 
+      </div>
+      <div class="mb-3">
+        <input type="tel" class="form-control" id="exampleInputPassword1" name="customer_mobile" placeholder="Mobile"> 
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <a class="btn btn-primary" href="{% url 'home-page' %}">Home</a>
+  </center>
+{% endif %}
